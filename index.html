@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/首页.css">
+    <!-- <link rel="stylesheet" href="./css4/iconfont.css">
+    <link rel="stylesheet" href="./css5/iconfont.css"> -->
+</head>
+<style>
+        .iconfont {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            /* left: 50%; */
+            z-index: 999;
+            font: 900 80px '';
+            color: #a18585;
+        }
+
+        #shubiao-btn {
+            top: 8%;
+            left: 5%;
+        }
+         #fanhui-btn{
+            top: 20%;
+            left: 5%;
+         }
+</style>
+<body>
+    <div class="shou">
+        <div class="wen">
+            <img src="./img/吃货.png" height="600" alt="">
+        </div>
+            <div class="a">
+                <div class="b" style="--i:2;background-image: url(./img/首2.jpeg);"></div>
+                <div class="c" style="--i:4;--s:1; background-image: url(./img/必看.jpg);"></div>
+                <div class="d" style="--i:3;--s:2; background-image: url(./img/首3.jpg);"></div>
+                <div class="e" style="--i:2;--s:3; background-image: url(./img/首4.jpeg);"></div>
+                <div class="f" style="--i:1;--s:4; background-image: url(./img/首1.jpeg);"></div>
+            </div>
+            <i class="iconfont icon-dianji" id="shubiao-btn" onclick="slideToPrev()"></i>
+            <i class="iconfont icon-a-appround15" id="fanhui-btn" onclick="goToHomePage()"></i>
+
+    </div>
+    <nav class="navbar">  
+        <ul class="navbar-list">  
+            <li class="navbar-item active"><a href="5.html">“何方神圣”</a></li>  
+            <li class="navbar-item"><a href="er.html">“新宠儿”</a></li>  
+            <li class="navbar-item"><a href="san2.html">营养宝库</a></li>  
+            <li class="navbar-item"><a href="si2.html">快捷却藏“劫”</a></li>  
+            <li class="navbar-item"><a href="wu.html">筑起“防火墙”</a></li>  
+            <li class="navbar-item"><a href="ewai.html">ewai</a></li>  
+            <li class="navbar-item"><a href="dianzan.html">dianzan</a></li>  
+        </ul>  
+    </nav>  
+    <div class="love">
+        <input id="switch" type="checkbox">
+        <label class="love-heart" for="switch">
+          <i class="left"></i>
+          <i class="right"></i>
+          <i class="bottom"></i>
+          <div class="round"></div>
+        </label>
+    </div>
+    <!-- <nav>  
+        <ul class="nav-links">  
+            <li><a href="5.html" >“何方神圣”</a></li>
+            <li><div class="line"></div></li>
+            <li><a href="er.html">“新宠儿”</a></li>
+            <li><div class="line"></div></li>
+            <li><a href="san2.html" >营养宝库</a></li>	
+            <li><div class="line"></div></li>
+            <li><a href="si.html" >快捷却藏“劫”</a></li>
+            <li><div class="line"></div></li>
+            <li><a href="wu.html" >筑起“防火墙”</a></li>
+        </ul>  
+    </nav> -->
+    
+
+    <script>
+//          document.querySelectorAll('.navbar-item a').forEach(function(link) {  
+//     link.addEventListener('click', function(e) {  
+//         e.preventDefault(); // 阻止默认的链接跳转行为  
+  
+//         // 移除所有选项卡的active类  
+//         document.querySelectorAll('.navbar-item').forEach(function(item) {  
+//             item.classList.remove('active');  
+//         });  
+  
+//         // 为点击的选项卡添加active类  
+//         this.parentNode.classList.add('active');  
+  
+//         // 这里可以添加显示/隐藏对应内容的代码...  
+//     });  
+// });
+//         // 显示导航栏  
+// function showNav() {  
+//     document.querySelector('.navbar-list').classList.add('visible');  
+// }  
+  
+// // 绑定事件监听器到right-btn  
+// document.getElementById('shubiao-btn').addEventListener('click', function() {  
+//     // 假设这里还有其他slideToNext的逻辑...  
+//     showNav(); // 显示导航栏  
+// });
+
+document.querySelectorAll('.navbar-item a').forEach(function(link) {    
+    link.addEventListener('click', function(e) {    
+        // 移除所有选项卡的active类    
+        document.querySelectorAll('.navbar-item').forEach(function(item) {    
+            item.classList.remove('active');    
+        });    
+    
+        // 为点击的选项卡添加active类    
+        this.parentNode.classList.add('active');    
+    
+        // 如果需要，可以在这里添加显示/隐藏对应内容的代码（注意：这将在页面跳转前执行）  
+          
+        // 由于我们不再调用 e.preventDefault()，链接将按照其 href 属性进行跳转  
+        // 如果你需要执行一些在跳转前的异步操作（如动画），你可能需要阻止默认行为，并使用 window.location 进行跳转  
+        // 例如：  
+        // setTimeout(function() {  
+        //     window.location.href = link.href;  
+        // }, 1000); // 等待1秒后跳转  
+          
+        // 在这个简单的例子中，我们不需要手动执行跳转，因为默认行为已经足够  
+    });    
+});  
+  
+// 显示导航栏    
+function showNav() {    
+    document.querySelector('.navbar-list').classList.add('visible');    
+}    
+  
+// 绑定事件监听器到right-btn    
+document.getElementById('shubiao-btn').addEventListener('click', function() {    
+    // 假设这里还有其他slideToNext的逻辑...    
+    showNav(); // 显示导航栏    
+});
+function goToHomePage() {  
+    // 使用 window.location.href 来设置要导航到的 URL  
+    window.location.href = "/"; // 假设首页的 URL 是根目录 "/"  
+    // 如果首页的 URL 不是根目录，你需要替换为实际的 URL，比如 "http://example.com" 或 "/index.html"  
+}
+document.getElementById('switch').addEventListener('change', function() {  
+            if (this.checked) {  
+                // 如果复选框被选中，则设置一个3秒后的跳转  
+                setTimeout(function() {  
+                    window.location.href = 'https://www.example.com'; // 替换为你想要跳转的页面的URL  
+                }, 1000); // 3000毫秒 = 3秒  
+            }  
+        });
+    </script>
+</body>
+</html>
